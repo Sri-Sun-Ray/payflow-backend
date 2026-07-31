@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from app.core.config import settings
 
 from app.modules.auth.router import router as auth_router
+from app.modules.payments.router import router as payments_router
 
 
 
@@ -12,6 +13,7 @@ app = FastAPI(
 )
 
 app.include_router(auth_router)
+app.include_router(payments_router)
 
 @app.get("/")
 async def root():
